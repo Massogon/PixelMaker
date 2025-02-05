@@ -12,6 +12,7 @@ function Editor() {
   const [currentTool, setCurrentTool] = useState("tile");
   const [selectedTile, setSelectedTile] = useState("grass");
   const [selectedObject, setSelectedObject] = useState("character");
+  const [characterLocation, setCharacterLocation] = useState(null);
   const [movingTile, setMovingTile] = useState(null);
   const movingTilePosRef = useRef({ x: 0, y: 0 });
   const [showTileSelector, setShowTileSelector] = useState(false);
@@ -63,6 +64,8 @@ function Editor() {
         movingTilePosRef={movingTilePosRef}
         tileImageElements={tileImageElements}
         objectImageElements={objectImageElements}
+        characterLocation={characterLocation}
+        setCharacterLocation={setCharacterLocation}
       />
       {showTileSelector && (
         <TileSelectorModal
