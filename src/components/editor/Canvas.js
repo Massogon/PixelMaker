@@ -88,15 +88,16 @@ function Canvas({
           }
         }
       }
+
       if (movingTile) {
         const pos = movingTilePosRef.current;
         if (tileImageElements[movingTile.type]) {
-          ctx.drawImage(tileImageElements[movingTile.type], pos.x - tileSize/2, pos.y - tileSize/2, tileSize, tileSize);
+          ctx.drawImage(tileImageElements[movingTile.type], pos.x - tileSize / 2, pos.y - tileSize / 2, tileSize, tileSize);
         } else if (objectImageElements[movingTile.type]) {
-          ctx.drawImage(objectImageElements[movingTile.type], pos.x - tileSize/2, pos.y - tileSize/2, tileSize, tileSize);
+          ctx.drawImage(objectImageElements[movingTile.type], pos.x - tileSize / 2, pos.y - tileSize / 2, tileSize, tileSize);
         }
         ctx.strokeStyle = 'lightgray';
-        ctx.strokeRect(pos.x - tileSize/2, pos.y - tileSize/2, tileSize, tileSize);
+        ctx.strokeRect(pos.x - tileSize / 2, pos.y - tileSize / 2, tileSize, tileSize);
       }
       animationFrameId.current = requestAnimationFrame(draw);
     };
@@ -179,7 +180,7 @@ function Canvas({
           if (movingTile.type in tileImageElements) {
             placeTileAt(pos, movingTile.type, offsetRef.current, tileDataRef);
           } else {
-            placeObjectAt(pos, selectedObject, offsetRef.current, tileDataRef);
+            placeObjectAt(pos, movingTile.type, offsetRef.current, tileDataRef);
           }
           setMovingTile(null);
         }
