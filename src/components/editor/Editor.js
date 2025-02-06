@@ -3,6 +3,7 @@ import Canvas from './Canvas';
 import Sidebar from './Sidebar';
 import TileSelectorModal from './TileSelectorModal';
 import ObjectSelectorModal from './ObjectSelectorModal';
+import { tileMapping, objectMapping } from '../../utils/imageMapping';
 
 function Editor() {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -19,23 +20,23 @@ function Editor() {
   const [showObjectSelector, setShowObjectSelector] = useState(false);
 
   const tileImageElements = useMemo(() => {
-    const grass = new Image();
-    grass.src = require('../../tiles/Grass.png');
-    const wall = new Image();
-    wall.src = require('../../tiles/Wall.png');
-    const water = new Image();
-    water.src = require('../../tiles/Water.png');
-    return { grass, wall, water };
+    const images = {};
+    Object.keys(tileMapping).forEach(key => {
+      const img = new Image();
+      img.src = require(`../../tiles/${tileMapping[key]}`);
+      images[key] = img;
+    });
+    return images;
   }, []);
 
   const objectImageElements = useMemo(() => {
-    const character = new Image();
-    character.src = require('../../objects/Character.png');
-    const door = new Image();
-    door.src = require('../../objects/Door.png');
-    const npc = new Image();
-    npc.src = require('../../objects/Npc.png');
-    return { character, door, npc };
+    const images = {};
+    Object.keys(objectMapping).forEach(key => {
+      const img = new Image();
+      img.src = require(`../../objects/${objectMapping[key]}`);
+      images[key] = img;
+    });
+    return images;
   }, []);
 
   return (
