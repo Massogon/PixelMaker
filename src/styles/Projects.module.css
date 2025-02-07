@@ -1,0 +1,32 @@
+/* Projects.module.css - Twitter Dark Mode Inspired Styling */
+.container {
+    background-color: #15202b; 
+    color: #e1e8ed; 
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.header {
+    color: #1DA1F2; 
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.paragraph {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #1DA1F2;
+    color: #ffffff;
+    padding: 10px 20px;
+}
+
+.button:hover {
+    background-color: #1991db;
+}

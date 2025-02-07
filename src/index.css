@@ -1,7 +1,160 @@
+/* Reset and Global Styles */
 html, body, #root {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #15202b; /* Dark mode background */
+  color: #e1e8ed;           /* Light text color for contrast */
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  overflow: hidden;         /* Prevent overall page scrolling */
+}
+
+/* Sidebar: Fixed navigation area on the left */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;             /* Fixed width for the sidebar */
+  background-color: #15202b; /* Matching dark background */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Navigation: Vertical stacking and spacing */
+.navigation {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between; /* Space between nav items and the button */
+}
+
+/* Logo Container */
+.logo-container {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Logo Style */
+.logo {
+  font-size: 2.5rem;     /* Prominent logo size */
+  font-weight: bold;
+  color: #e1e8ed;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+/* Nav Links Container: Stack links vertically */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Even vertical spacing between nav items */
+}
+
+/* Navigation Items: Big uppercase letters */
+.nav-item {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: #e1e8ed;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background 0.2s ease-in-out;
+  display: block; /* Each link takes its own line */
+}
+
+/* Hover effect for navigation items */
+.nav-item:hover {
+  background-color: #1a2733;
+}
+
+/* Post Your Project Button */
+.post-project {
+  background-color: #1da1f2;  /* Twitter blue */
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 25px;
+  width: 100%;                /* Full width of the sidebar */
+  transition: background-color 0.2s ease;
+}
+
+/* Hover effect for the Post Your Project Button */
+.post-project:hover {
+  background-color: #1991db;
+}
+
+/* Main Content Area: Positioned to the right of the fixed sidebar */
+.main-content {
+  margin-left: 250px;               /* Leave space for the fixed sidebar */
+  width: calc(100% - 250px);          /* Prevent horizontal overflow */
+  padding: 0;                       /* Padding handled by inner elements */
+  background-color: #192734;         /* A slightly different dark shade */
+  color: #e1e8ed;
+  box-sizing: border-box;
+  height: 100vh;                    /* Full viewport height */
+  overflow-y: auto;                 /* Enable vertical scrolling for content */
+  overflow-x: hidden;               /* Prevent horizontal scrolling */
+}
+
+/* Header: Sticky at the top of the main content */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;         /* Align profile to the right */
+  padding: 10px 20px;
+  background-color: #192734;         /* Matches main content background */
+  z-index: 10;
+}
+
+/* Profile Container in Header */
+.profile {
+  position: relative;
+}
+
+/* Profile Image/Icon */
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: absolute;
+  top: 50px;       /* Positioned below the profile image */
+  right: 0;
+  background-color: #15202b;
+  border: 1px solid #1a2733;
+  border-radius: 8px;
+  min-width: 150px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  display: block;
+  padding: 10px;
+  color: #e1e8ed;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+  background-color: #1a2733;
+}
+
+/* Content Area inside Main Content (if needed) */
+.content {
+  padding: 20px; /* Provides spacing below the sticky header */
+}
